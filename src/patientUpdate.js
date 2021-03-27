@@ -4,7 +4,7 @@ var auth = require('./auth');
 var _ = require('lodash');
 const dotenv = require("dotenv");
 dotenv.config();
-function objectChecker(data){
+function update(data){
     data.forEach(obj => {
       let chf_id = obj.identifier.find(element =>element.type.coding[0].code=='SB').value
      request({
@@ -47,4 +47,4 @@ function objectChecker(data){
     });
 }
 
-exports.objectChecker = objectChecker
+exports.update = update
